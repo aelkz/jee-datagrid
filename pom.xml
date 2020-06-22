@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.redhat.microservices</groupId>
+    <artifactId>jee-datagrid</artifactId>
+    <version>1.0</version>
+
+    <modules>
+        <module>webapp</module>
+    </modules>
+
+    <packaging>pom</packaging>
+
+    <name>Red Hat Training - Persisting HTTP session data to a JDG cluster</name>
+    <description>Webapp with externalized http session with Red Hat Datagrid</description>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/liucenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>aelkz</id>
+            <name>Raphael Abreu</name>
+            <email>raphael.alex@gmail.com</email>
+            <url>https://github.com/aelkz</url>
+        </developer>
+    </developers>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <version.war.plugin>3.2.3</version.war.plugin>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
+        <maven.min.version>3.5.4</maven.min.version>
+        <nexusReleaseRepoUrl></nexusReleaseRepoUrl>
+        <nexusSnapshotRepoUrl></nexusSnapshotRepoUrl>
+    </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>nexus-releases</id>
+            <url>${nexusReleaseRepoUrl}</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <url>${nexusSnapshotRepoUrl}</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <repositories>
+        <!-- maven central repository -->
+        <!-- do not use this in production, use your own maven repository -->
+        <repository>
+            <id>central</id>
+            <name>Maven Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <!-- redhat official maven repositories -->
+        <repository>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>red-hat-ga-repository</id>
+            <name>Red Hat GA Repository</name>
+            <url>https://maven.repository.redhat.com/ga</url>
+        </repository>
+        <repository>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>red-hat-ea-repository</id>
+            <name>Red Hat EA Repository</name>
+            <url>https://maven.repository.redhat.com/earlyaccess/all/</url>
+        </repository>
+        <!-- jboss.org repository -->
+        <!-- Due to error: Could not find artifact org.glassfish:javax.el-impl:jar:3.0.1-b08-jbossorg-1 -->
+        <!-- https://issues.redhat.com/browse/THORN-776?workflowName=SWARM+Kanban+workflow+v1&stepId=1 -->
+        <!-- https://issues.redhat.com/browse/THORN-549?attachmentOrder=desc -->
+        <!-- https://www.39mo.com/43/536323.php -->
+        <!-- https://mvnrepository.com/artifact/org.glassfish/javax.el-impl/3.0.1-b08-jbossorg-1 -->
+        <repository>
+            <id>jboss-public-repository-group</id>
+            <name>JBoss Public Repository Group</name>
+            <url>https://repository.jboss.org/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>maven-ga-repository</id>
+            <url>https://repo.maven.apache.org/maven2/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>red-hat-ga-repository</id>
+            <name>Red Hat GA Repository</name>
+            <url>https://maven.repository.redhat.com/ga</url>
+        </pluginRepository>
+        <pluginRepository>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>red-hat-ea-repository</id>
+            <name>Red Hat EA Repository</name>
+            <url>https://maven.repository.redhat.com/earlyaccess/all/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.keycloak</groupId>
+            <artifactId>keycloak-core</artifactId>
+            <scope>compile</scope>
+            <version>6.0.1.redhat-00001</version>
+        </dependency>
+        <dependency>
+            <groupId>org.keycloak</groupId>
+            <artifactId>keycloak-adapter-core</artifactId>
+            <scope>compile</scope>
+            <version>6.0.1.redhat-00001</version>
+        </dependency>
+        <dependency>
+            <groupId>org.keycloak</groupId>
+            <artifactId>keycloak-adapter-spi</artifactId>
+            <scope>compile</scope>
+            <version>6.0.1.redhat-00001</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.11.redhat-00001</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.spec.javax.servlet</groupId>
+            <artifactId>jboss-servlet-api_3.1_spec</artifactId>
+            <scope>compile</scope>
+            <version>1.0.0.Final-redhat-1</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.plugin.version}</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>${version.war.plugin}</version>
+                <configuration>
+                    <!-- Java EE 7 doesn't require web.xml, Maven needs to catch up! -->
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>
