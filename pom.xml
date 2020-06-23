@@ -35,6 +35,7 @@
 
     <properties>
         <version.jboss.bom.eap>7.1.5.GA</version.jboss.bom.eap>
+        <version.wildfly.bom.microprofile>20.0.0.Final</version.wildfly.bom.microprofile>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <version.war.plugin>3.2.3</version.war.plugin>
         <version.wildfly.maven.plugin>2.0.2.Final</version.wildfly.maven.plugin>

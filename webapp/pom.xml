@@ -27,6 +27,13 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>org.wildfly.bom</groupId>
+                <artifactId>wildfly-microprofile</artifactId>
+                <version>${version.wildfly.bom.microprofile}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -81,7 +88,10 @@
                 </configuration>
             </plugin>
         </plugins>
-
     </build>
+
+    <profiles>
+
+    </profiles>
 
 </project>
