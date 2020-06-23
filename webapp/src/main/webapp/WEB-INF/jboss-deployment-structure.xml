@@ -11,7 +11,9 @@
             -->
             <module name="org.wildfly.extension.bean-validation"/>
             <module name="org.wildfly.extension.microprofile.config-smallrye"/>
+            <!--
             <module name="org.wildfly.extension.microprofile.fault-tolerance-smallrye"/>
+            -->
             <module name="org.wildfly.extension.microprofile.health-smallrye"/>
             <module name="org.wildfly.extension.microprofile.jwt-smallrye"/>
             <module name="org.wildfly.extension.microprofile.metrics-smallrye"/>
