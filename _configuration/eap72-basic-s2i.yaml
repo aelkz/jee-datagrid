@@ -110,7 +110,7 @@ objects:
         forcePull: true
         from:
           kind: ImageStreamTag
-          name: jboss-eap72-openshift:1.1
+          name: eap72-openshift:1.0
           namespace: ${IMAGE_STREAM_NAMESPACE}
         incremental: true
       type: Source

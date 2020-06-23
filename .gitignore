@@ -8,3 +8,5 @@
 /maven-settings.xml
 /config.json
 /sso74_provision_details.txt
+/webapp/target/classes/com/redhat/labs/jeedatagrid/
+/eap_installation_details.txt
