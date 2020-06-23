@@ -37,6 +37,7 @@
         <version.jboss.bom.eap>7.1.5.GA</version.jboss.bom.eap>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <version.war.plugin>3.2.3</version.war.plugin>
+        <version.wildfly.maven.plugin>2.0.2.Final</version.wildfly.maven.plugin>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
