@@ -9,15 +9,15 @@
             <module name="com.fasterxml.jackson.core.jackson-annotations"/>
             <module name="com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider"/>
             -->
-            <module name="org.wildfly.extension.bean-validation"/>
-            <module name="org.wildfly.extension.microprofile.config-smallrye"/>
             <!--
             <module name="org.wildfly.extension.microprofile.fault-tolerance-smallrye"/>
-            -->
-            <module name="org.wildfly.extension.microprofile.health-smallrye"/>
             <module name="org.wildfly.extension.microprofile.jwt-smallrye"/>
-            <module name="org.wildfly.extension.microprofile.metrics-smallrye"/>
             <module name="org.wildfly.extension.microprofile.openapi-smallrye"/>
+            -->
+            <module name="org.wildfly.extension.bean-validation"/>
+            <module name="org.wildfly.extension.microprofile.config-smallrye"/>
+            <module name="org.wildfly.extension.microprofile.health-smallrye"/>
+            <module name="org.wildfly.extension.microprofile.metrics-smallrye"/>
             <module name="org.wildfly.extension.microprofile.opentracing-smallrye"/>
             <module name="org.keycloak.keycloak-adapter-subsystem"/>
         </dependencies>
