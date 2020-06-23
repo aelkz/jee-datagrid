@@ -77,7 +77,7 @@
                     <warName>ROOT</warName>
                     <webResources>
                         <resource>
-                            <directory>${basedir}/config</directory>
+                            <directory>${basedir}/keycloak-config</directory>
                             <includes>
                                 <include>keycloak.json</include>
                             </includes>
