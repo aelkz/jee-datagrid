@@ -6,3 +6,5 @@
 /storage-service/target/
 /.idea/
 /maven-settings.xml
+/config.json
+/sso74_provision_details.txt

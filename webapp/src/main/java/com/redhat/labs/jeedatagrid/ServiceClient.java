@@ -8,7 +8,6 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.keycloak.KeycloakSecurityContext;
 import org.keycloak.util.JsonSerialization;
-
 import javax.servlet.http.HttpServletRequest;
 import java.io.InputStream;
 

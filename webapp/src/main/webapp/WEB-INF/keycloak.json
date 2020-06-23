@@ -1,0 +1,8 @@
+{
+  "realm": "${env.AUTH_REALM}",
+  "bearer-only": false,
+  "auth-server-url": "${env.AUTH_URL}",
+  "ssl-required": "external",
+  "resource": "${env.AUTH_CLIENT_ID}",
+  "realm-public-key": "${env.PUBLIC_KEY}"
+}
