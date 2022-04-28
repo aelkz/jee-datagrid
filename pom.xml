@@ -153,7 +153,7 @@
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-core</artifactId>
             <scope>compile</scope>
-            <version>6.0.1.redhat-00001</version>
+            <version>17.0.1</version>
         </dependency>
         <dependency>
             <groupId>org.keycloak</groupId>
